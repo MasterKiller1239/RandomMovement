@@ -5,20 +5,28 @@ using UnityEngine;
 public class UnitSpawner : MonoBehaviour
 {
     public GameObject UnitPrefab;
-    List<GameObject> enemies = new List<GameObject>();
+    public List<GameObject> Units = new List<GameObject>();
     [Range(1, 10)]
     public float spawnRadius = 1;
+    private bool isSpawning = true;
+    private int maxNumberOfUnits = 30;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Spawn());
     }
 
+    void Update()
+    {
+        if(isSpawning==false && Units.Count < maxNumberOfUnits)
+        StartCoroutine(Spawn());
+    }
     public IEnumerator Spawn()
     {
        
-        while(enemies.Count<30)
+        while(Units.Count< maxNumberOfUnits)
         {
+            isSpawning = true;
             Vector3 randDirection = Random.insideUnitSphere * spawnRadius;
 
             UnityEngine.AI.NavMeshHit navHit;
@@ -26,12 +34,14 @@ public class UnitSpawner : MonoBehaviour
             UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, spawnRadius, -1);
 
             GameObject newGO = (GameObject)Instantiate(UnitPrefab, navHit.position, Quaternion.identity);
-            enemies.Add(newGO);
-
-            yield return new WaitForSecondsRealtime(Random.Range(2,10));
+            newGO.transform.parent = gameObject.transform;
+            Units.Add(newGO);
+            if (Units.Count == maxNumberOfUnits)
+                isSpawning = false;
+            yield return new WaitForSecondsRealtime(Random.Range(2f,10f));
         }
     
-
+        
        
 
 

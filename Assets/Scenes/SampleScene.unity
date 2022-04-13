@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 1225614979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4218, y: 1.4218, z: 1.4218}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitPrefab: {fileID: 5112522733201223662, guid: 304ee6044d416d14584dc0da87051708, type: 3}
+  Units: []
   spawnRadius: 7.08
 --- !u!4 &1968637306
 Transform:
