@@ -461,6 +461,8 @@ MonoBehaviour:
   UnitPrefab: {fileID: 5112522733201223662, guid: 304ee6044d416d14584dc0da87051708, type: 3}
   Units: []
   spawnRadius: 7.08
+  maxSpawnTime: 0.1
+  minSpawnTime: 0.2
 --- !u!4 &1968637306
 Transform:
   m_ObjectHideFlags: 0

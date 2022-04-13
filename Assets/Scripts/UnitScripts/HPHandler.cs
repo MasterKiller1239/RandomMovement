@@ -2,31 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPHandler : MonoBehaviour
+namespace MarcoPolo
 {
-   private int maxHP = 3;
-    public int currentHP = 3;
-
-    // Start is called before the first frame update
-    void Start()
+    public class HPHandler : MonoBehaviour
     {
+        private int maxHP = 3;
+        public int currentHP = 3;
+
+        public int MaxHP { get => maxHP; set => maxHP = value; }
         
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer==6)
-            currentHP--;
-
-        if (currentHP<=0)
+        // Start is called before the first frame update
+        void Start()
         {
-            if(GetComponentInParent<UnitSpawner>().Units.Remove(collision.gameObject))
-            Destroy(this.gameObject);
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (currentHP <= 0)
+            {
+                if (GetComponentInParent<UnitSpawner>().Units.Remove(this.gameObject))
+                    Destroy(this.gameObject);
+            }
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.layer == 6)
+                currentHP--;
+
+        
         }
     }
 }
