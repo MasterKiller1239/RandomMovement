@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace MarcoPolo
 {
-    public class RandererHandler : MonoBehaviour
+    public class UnitRandererHandler : MonoBehaviour
     {
         Renderer rend;
+        public Renderer outline;
         HPHandler healthComp;
         Vector3 lastPos;
         Vector3 velocity;
@@ -26,6 +27,7 @@ namespace MarcoPolo
         {
             healthComp = GetComponent<HPHandler>();
             rend = GetComponent<Renderer>();
+          
         }
         private void Update()
         {
@@ -62,7 +64,12 @@ namespace MarcoPolo
             lastRot = transform.rotation.eulerAngles;
         }
 
-
+        private void OnMouseEnter()
+        {
+            outline.material.SetFloat("_SizeOfOutline", 0.1f);
+            outline.material.SetColor("_ColorOfOutline", new Color(1, 1, 1, 0.3f));
+        }
+       
 
     }
 }

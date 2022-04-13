@@ -35,4 +35,5 @@ Material:
     - _SizeOfOutline: 0
     m_Colors:
     - Color_ccff7111577e4d768565e18290376e98: {r: 0.9333334, g: 0.07450981, b: 0.07450981, a: 0.043137256}
+    - _ColorOfOutline: {r: 1, g: 0.3537736, b: 0.3537736, a: 0.07058824}
   m_BuildTextureStacks: []

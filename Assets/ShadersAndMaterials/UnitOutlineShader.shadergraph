@@ -52,9 +52,6 @@
             "m_Id": "8bcb74deb8dc40f99b1dc2f16e089c25"
         },
         {
-            "m_Id": "4483ab59b36c47c799122a1869d83db2"
-        },
-        {
             "m_Id": "451e5cd04d75409fb7bd3a3fd7272d8d"
         },
         {
@@ -445,41 +442,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "4483ab59b36c47c799122a1869d83db2",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -1145.2188720703125,
-            "y": 669.1849975585938,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "480bca1013de4fa98c81e075ecc3ff48"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "ccff7111577e4d768565e18290376e98"
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "451e5cd04d75409fb7bd3a3fd7272d8d",
     "m_Group": {
         "m_Id": ""
@@ -510,31 +472,6 @@
     "m_Property": {
         "m_Id": "ba01ffb94d8d4f9cad8e38965fcf5d93"
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "480bca1013de4fa98c81e075ecc3ff48",
-    "m_Id": 0,
-    "m_DisplayName": "ColorOfOutline",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
 }
 
 {
@@ -1186,17 +1123,17 @@
     },
     "m_Name": "ColorOfOutline",
     "m_DefaultReferenceName": "Color_ccff7111577e4d768565e18290376e98",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_ColorOfOutline",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.0,
-        "g": 0.13945817947387696,
-        "b": 1.0,
-        "a": 0.07058823853731156
+        "r": 1.0,
+        "g": 0.24056601524353028,
+        "b": 0.24056601524353028,
+        "a": 0.03529411926865578
     },
     "m_ColorMode": 0
 }
