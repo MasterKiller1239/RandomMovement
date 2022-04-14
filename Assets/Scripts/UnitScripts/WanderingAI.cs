@@ -7,8 +7,7 @@ namespace MarcoPolo
 {
     public class WanderingAI : MonoBehaviour
     {
-        public float wanderRadius;
-        public float wanderTimer;
+    
         private bool isWandering = false;
         private Transform target;
         private UnityEngine.AI.NavMeshAgent agent;
@@ -34,17 +33,17 @@ namespace MarcoPolo
         {
             isWandering = true;
 
-            Vector3 randDirection = Random.insideUnitSphere * wanderRadius;
+            Vector3 randDirection = Random.insideUnitSphere * this.GetComponent<StatsComponent>().WanderRadius;
 
             randDirection += transform.position;
 
             UnityEngine.AI.NavMeshHit navHit;
 
-            UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, wanderRadius, -1);
+            UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, this.GetComponent<StatsComponent>().WanderRadius, -1);
 
             agent.SetDestination(navHit.position);
 
-            yield return new WaitForSecondsRealtime(wanderTimer);
+            yield return new WaitForSecondsRealtime(this.GetComponent<StatsComponent>().WanderTimer);
 
             isWandering = false;
 

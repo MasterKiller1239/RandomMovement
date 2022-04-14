@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 5203221180510618670}
   m_Layer: 6
   m_Name: Unit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765d74b9d0be2bf42a8daca307ab81c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 3
 --- !u!54 &4147320788837713390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -245,7 +244,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -262,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outline: {fileID: 631189000}
-  MaxWobble: 0.003
+  MaxWobble: 0.001
   WobbleSpeed: 1
   Recovery: 1
 --- !u!114 &5203221180510618670
@@ -277,7 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e555dc48e63286e499f391ea22006ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 3
   wanderRadius: 0
   wanderTimer: 0
-  Name: 
+  Name: MarcoPolo

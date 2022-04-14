@@ -7,6 +7,7 @@ namespace MarcoPolo
     public class UnitSpawner : MonoBehaviour
     {
         public GameObject UnitPrefab;
+        public UnitScpObject UnitType;
         public List<GameObject> Units = new List<GameObject>();
         [Range(1, 10)]
         public float spawnRadius = 1;
@@ -38,6 +39,7 @@ namespace MarcoPolo
                 UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, spawnRadius, -1);
 
                 GameObject newGO = (GameObject)Instantiate(UnitPrefab, navHit.position, Quaternion.identity);
+                newGO.GetComponent<StatsComponent>().SetStats(UnitType);
                 newGO.transform.parent = gameObject.transform;
                 Units.Add(newGO);
                 if (Units.Count == maxNumberOfUnits)

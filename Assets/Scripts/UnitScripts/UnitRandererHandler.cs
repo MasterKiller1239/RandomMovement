@@ -7,7 +7,7 @@ namespace MarcoPolo
     {
         Renderer rend;
         public Renderer outline;
-        HPHandler healthComp;
+        StatsComponent healthComp;
         Vector3 lastPos;
         Vector3 velocity;
         Vector3 lastRot;
@@ -21,13 +21,17 @@ namespace MarcoPolo
         float wobbleAmountToAddZ;
         float pulse;
         float time = 0.5f;
+        Color DefaultOutlineColor;
+        float DefaultOutlineSize=0;
 
         // Use this for initialization
         void Start()
         {
-            healthComp = GetComponent<HPHandler>();
+            healthComp = GetComponent<StatsComponent>();
             rend = GetComponent<Renderer>();
-          
+            DefaultOutlineColor = outline.material.GetColor("_ColorOfOutline");
+
+
         }
         private void Update()
         {
@@ -42,13 +46,13 @@ namespace MarcoPolo
             wobbleAmountZ = wobbleAmountToAddZ * Mathf.Sin(pulse * time);
 
             // send it to the shader
-            if ((healthComp.currentHP / (float)healthComp.MaxHP)<1)
+            if ((healthComp.CurrentHP / (float)healthComp.MaxHP) <1)
             {
                 rend.material.SetFloat("_WobbleX", wobbleAmountX);
                 rend.material.SetFloat("_WobbleZ", wobbleAmountZ);
             }
       
-            rend.material.SetFloat("_Fill", (healthComp.currentHP/ (float)healthComp.MaxHP));
+            rend.material.SetFloat("_Fill", (healthComp.CurrentHP/ (float)healthComp.MaxHP));
 
             // velocity
             velocity = (lastPos - transform.position) / Time.deltaTime;
@@ -64,10 +68,19 @@ namespace MarcoPolo
             lastRot = transform.rotation.eulerAngles;
         }
 
-        private void OnMouseEnter()
+        public void SelectUnit(bool isSelected)
         {
-            outline.material.SetFloat("_SizeOfOutline", 0.1f);
-            outline.material.SetColor("_ColorOfOutline", new Color(1, 1, 1, 0.3f));
+            if(isSelected)
+            {
+                outline.material.SetFloat("_SizeOfOutline", 0.1f);
+                outline.material.SetColor("_ColorOfOutline", new Color(0, 0, 0, 0.3f));
+            }
+            else
+            {
+                outline.material.SetFloat("_SizeOfOutline", DefaultOutlineSize);
+                outline.material.SetColor("_ColorOfOutline", DefaultOutlineColor);
+            }
+           
         }
        
 

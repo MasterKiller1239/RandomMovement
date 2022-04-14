@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class RaycastHanlder : MonoBehaviour
+namespace MarcoPolo
 {
-    GameObject Unit;
+    public class RaycastHanlder : MonoBehaviour
+{
+        private GameObject Unit;
+   public  UIController UICon;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,24 @@ public class RaycastHanlder : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit = CastRay();
-
-            if(hit.collider.GetComponent<StatsComponent>()!=null)
+                RaycastHit hit = CastRay();
+                if (Unit != null)
+                {
+                    Unit.GetComponent<UnitRandererHandler>().SelectUnit(false);
+                    UICon.HideInfoAboutUnit();
+                    Unit = null;
+                }
+                
+              
+                if (hit.collider != null)
+                    if (hit.collider.CompareTag("Enemy"))
             {
-                Unit = hit.collider.gameObject;
-            }
+                
+                    Unit = hit.collider.gameObject;
+                    Unit.GetComponent<UnitRandererHandler>().SelectUnit(true);
+                    UICon.ShowInfoAboutUnit(Unit);
+
+                }
         }
     }
     private RaycastHit CastRay()
@@ -35,8 +49,11 @@ public class RaycastHanlder : MonoBehaviour
         Vector3 worldMopusePosFar = Camera.main.ScreenToWorldPoint(screenMousePosFar);
         Vector3 worldMopusePosNear = Camera.main.ScreenToWorldPoint(screenMousePosNear);
         RaycastHit hit;
-        Physics.Raycast(worldMopusePosNear, worldMopusePosFar - worldMopusePosNear, out hit);
+            int layerMask = 1 << 6;
 
-        return hit;
+            Physics.Raycast(worldMopusePosNear, worldMopusePosFar - worldMopusePosNear, out hit,Mathf.Infinity, layerMask);
+            
+            return hit;
     }
+}
 }
