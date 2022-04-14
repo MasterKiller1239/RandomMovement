@@ -1694,7 +1694,7 @@ MonoBehaviour:
   Units: []
   spawnRadius: 7.08
   maxNumberOfUnits: 30
-  minSpawnTime: 1
+  minSpawnTime: 2
   maxSpawnTime: 10
 --- !u!4 &1968637306
 Transform:
