@@ -9,10 +9,6 @@ namespace MarcoPolo
     [SerializeField]
     private GameObject Unitinfo;
     [SerializeField]
-    private Slider healthbar;
-    [SerializeField]
-    private TMP_Text Name;
-    [SerializeField]
     private Button MarcoPoloButton;
     [SerializeField]
     private GameObject ScrollArea;
@@ -44,7 +40,7 @@ namespace MarcoPolo
                     string str = "";
                     if (i % 3 == 0)
                     {
-                        str += "Marco";
+                        str += "Marko";
                     }
                     if (i % 5 == 0)
                     {
@@ -68,7 +64,8 @@ namespace MarcoPolo
         if(currentUnit!=null)
         {
            
-            Unitinfo.transform.Find("UnitName").gameObject.GetComponent<TMP_Text>().text = currentUnit.GetComponent<StatsComponent>().Name +"\n"+ currentUnit.GetComponent<StatsComponent>().CurrentHP + "/" + currentUnit.GetComponent<StatsComponent>().MaxHP;
+            Unitinfo.transform.Find("UnitName").gameObject.GetComponent<TMP_Text>().text = currentUnit.GetComponent<StatsComponent>().Name +"\n"+ currentUnit.GetComponent<StatsComponent>().CurrentHP +
+                    "/" + currentUnit.GetComponent<StatsComponent>().MaxHP;
             Unitinfo.transform.Find("Slider").gameObject.GetComponent<Slider>().value= currentUnit.GetComponent<StatsComponent>().CurrentHP/(float) currentUnit.GetComponent<StatsComponent>().MaxHP;
         }
         else

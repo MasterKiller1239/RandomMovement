@@ -10,4 +10,5 @@ public class UnitScpObject : ScriptableObject
     public float wanderRadius = 10;
     public float wanderTimer = 3;
     public string m_name = "";
+    public Mesh m_mesh;
 }

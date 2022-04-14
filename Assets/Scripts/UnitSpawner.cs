@@ -12,9 +12,11 @@ namespace MarcoPolo
         [Range(1, 10)]
         public float spawnRadius = 1;
         private bool isSpawning = true;
-        private int maxNumberOfUnits = 30;
-        public float maxSpawnTime = 10f;
+        [Range(1, 50)]
+        public int maxNumberOfUnits = 30;
         public float minSpawnTime = 2f;
+        public float maxSpawnTime = 10f;
+        
         // Start is called before the first frame update
         void Start()
         {

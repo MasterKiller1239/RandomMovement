@@ -17,3 +17,4 @@ MonoBehaviour:
   wanderRadius: 15
   wanderTimer: 2
   m_name: MarcoSolo
+  m_mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}

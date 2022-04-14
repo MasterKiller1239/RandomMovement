@@ -7,7 +7,6 @@ namespace MarcoPolo
 {
     public class WanderingAI : MonoBehaviour
     {
-    
         private bool isWandering = false;
         private Transform target;
         private UnityEngine.AI.NavMeshAgent agent;

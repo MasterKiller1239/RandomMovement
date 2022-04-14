@@ -6,7 +6,7 @@ namespace MarcoPolo
     public class RaycastHanlder : MonoBehaviour
 {
         private GameObject Unit;
-   public  UIController UICon;
+        public  UIController UICon;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +49,9 @@ namespace MarcoPolo
         Vector3 worldMopusePosFar = Camera.main.ScreenToWorldPoint(screenMousePosFar);
         Vector3 worldMopusePosNear = Camera.main.ScreenToWorldPoint(screenMousePosNear);
         RaycastHit hit;
-            int layerMask = 1 << 6;
-
-            Physics.Raycast(worldMopusePosNear, worldMopusePosFar - worldMopusePosNear, out hit,Mathf.Infinity, layerMask);
-            
-            return hit;
+        int layerMask = 1 << 6;
+        Physics.Raycast(worldMopusePosNear, worldMopusePosFar - worldMopusePosNear, out hit,Mathf.Infinity, layerMask);
+        return hit;
     }
 }
 }

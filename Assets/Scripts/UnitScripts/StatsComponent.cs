@@ -10,6 +10,7 @@ namespace MarcoPolo
         private float wanderRadius=10;
         private float wanderTimer =3;
         private string m_name = "";
+        
 
         public int CurrentHP { get => currentHP; set => currentHP = value; }
         public int MaxHP { get => maxHP; set => maxHP = value; }
@@ -24,6 +25,8 @@ namespace MarcoPolo
             WanderRadius = ob.wanderRadius;
             WanderTimer = ob.wanderTimer;
             Name = ob.m_name;
+            this.GetComponent<MeshFilter>().mesh = ob.m_mesh;
+            this.transform.Find("Outline").GetComponent<MeshFilter>().mesh = ob.m_mesh;
         }
     }
 }

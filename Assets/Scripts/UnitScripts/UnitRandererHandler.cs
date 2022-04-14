@@ -67,7 +67,7 @@ namespace MarcoPolo
             lastPos = transform.position;
             lastRot = transform.rotation.eulerAngles;
         }
-
+      
         public void SelectUnit(bool isSelected)
         {
             if(isSelected)

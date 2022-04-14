@@ -1657,8 +1657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unitinfo: {fileID: 961766132}
-  healthbar: {fileID: 375228919}
-  Name: {fileID: 1558292340}
   MarcoPoloButton: {fileID: 1119267664}
   ScrollArea: {fileID: 201703379}
   currentUnit: {fileID: 0}
@@ -1696,8 +1694,9 @@ MonoBehaviour:
   UnitType: {fileID: 11400000, guid: 6ed2d1a50cb965e479e0c118418fb5d5, type: 2}
   Units: []
   spawnRadius: 7.08
-  maxSpawnTime: 2
-  minSpawnTime: 3
+  maxNumberOfUnits: 30
+  minSpawnTime: 1
+  maxSpawnTime: 10
 --- !u!4 &1968637306
 Transform:
   m_ObjectHideFlags: 0
