@@ -40,11 +40,11 @@ namespace MarcoPolo
                     string str = "";
                     if (i % 3 == 0)
                     {
-                        str += "Marko";
+                        str += "<color=red>Marko</color>";
                     }
                     if (i % 5 == 0)
                     {
-                        str += "Polo";
+                        str += "<color=#ce490e>Polo</color>";
                     }
                     if (str.Length == 0)
                     {
