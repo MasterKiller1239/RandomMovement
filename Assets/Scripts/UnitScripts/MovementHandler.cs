@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MarcoPolo
 {
-    public class WanderingAI : MonoBehaviour
+    public class MovementHandler : MonoBehaviour
     {
         private bool isWandering = false;
         private Transform target;
@@ -27,7 +27,7 @@ namespace MarcoPolo
                 StartCoroutine(MoveToLocation());
         }
 
-
+        //Makes Unit move to a random location
         public IEnumerator MoveToLocation()
         {
             isWandering = true;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace MarcoPolo
 {
-    public class RaycastHanlder : MonoBehaviour
+    public class RaycastHandler : MonoBehaviour
 {
         private GameObject Unit;
         public  UIController UICon;
@@ -38,7 +38,8 @@ namespace MarcoPolo
                 }
         }
     }
-    private RaycastHit CastRay()
+        //Cast a ray and returns first object hit
+        private RaycastHit CastRay()
     {
         Vector3 screenMousePosFar = new Vector3(Input.mousePosition.x,
             Input.mousePosition.y,
@@ -49,8 +50,7 @@ namespace MarcoPolo
         Vector3 worldMopusePosFar = Camera.main.ScreenToWorldPoint(screenMousePosFar);
         Vector3 worldMopusePosNear = Camera.main.ScreenToWorldPoint(screenMousePosNear);
         RaycastHit hit;
-        int layerMask = 1 << 6;
-        Physics.Raycast(worldMopusePosNear, worldMopusePosFar - worldMopusePosNear, out hit,Mathf.Infinity, layerMask);
+        Physics.Raycast(worldMopusePosNear, worldMopusePosFar - worldMopusePosNear, out hit);
         return hit;
     }
 }
